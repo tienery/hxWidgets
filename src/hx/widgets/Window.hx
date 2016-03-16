@@ -1,6 +1,7 @@
 package hx.widgets;
 
 import wx.widgets.List.WindowList in WxWindowList;
+import wx.widgets.List.WindowListNode in WxWindowListNode;
 import wx.widgets.Point in WxPoint;
 import wx.widgets.Size in WxSize;
 import wx.widgets.Size.SizeImpl in WxSizeImpl;
@@ -116,7 +117,7 @@ class Window extends EvtHandler {
         var list:Array<Window> = new Array<Window>();
         var windowList:WxWindowList = _ref.getChildren();
         for (i in 0...windowList.getCount()) {
-            var ref:WxWindow = windowList.item(i).getData();
+            var ref:WxWindow = (windowList.item(i):WxWindowListNode).getData();
             var child:Window = new Window();
             child._ref = ref;
             list.push(child);
