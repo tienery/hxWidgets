@@ -28,7 +28,6 @@ extern class WindowList {
 
 @:include("wx/list.h")
 @:unreflective
-@:structAccess
 @:native("wxWindowList::compatibility_iterator")
 extern class WindowListNode {
     @:native("GetData")            public function getData():Window;
